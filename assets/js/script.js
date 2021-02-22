@@ -1,48 +1,58 @@
-//generate variables
-
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
+
+    // generate unique password
+    var errorMsg = "";
+    generatePassword(errorMsg);
+}
+
+function updatePasswordValue(password) {
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // generate password
-function generatePassword() {
+function generatePassword(errorMsg) {
 
     var password = "";
-    var length = window.prompt("Password Length");
+    var promptMsg = "Password Length" + ((errorMsg.length > 0) ? " - " + errorMsg : "");
+    var length = parseInt(window.prompt(promptMsg));
     var useLower = window.confirm("Use lowercase?");
     var useUpper = window.confirm("Use uppercase?");
     var useNums = window.confirm("Use numbers?");
     var useChars = window.confirm("Use special characters?");
-
-    console.log(useLower, useUpper, useNums, useChars);
-    while (password.length < length) {
-        if (useLower) {
-            password += getLower();
+    console.log(length, useLower, useUpper, useNums, useChars);
+    var valid = length >= 8 && length <= 128 && (useLower || useUpper || useNums || useChars);
+    console.log(valid);
+    if (valid) {
+        console.log(useLower, useUpper, useNums, useChars,length);
+        while (password.length < length) {
+            if (useLower && password.length < length) {
+                password += getLower();
+            }
+            if (useUpper && password.length < length) {
+                password += getUpper();
+            }
+            if (useNums && password.length < length) {
+                password += getNums();
+            }
+            if (useChars && password.length < length) {
+                password += getChars();
+            }
+            
+            // update password value
+            updatePasswordValue(password); 
         }
-        if (useUpper) {
-            password += getUpper();
-        }
-        if (useNums) {
-            password += getNums();
-        }
-        if (useChars) {
-            password += getChars();
-        }
+    } else {
+        generatePassword("Invalid Password, Please Retry");
+        
     }
-    return password;
 }
 
 function getLower() {
@@ -65,14 +75,4 @@ function getChars() {
     var random = Math.floor(Math.random() * vals.length);
     return vals.charAt(random);
 }
-
-// var getPlayerName = function() {
-//     var name = "";
-  
-//     while (name === "" || name === null) {
-//       name = prompt("What is your robot's name?");
-//     }
-//     console.log("Your robot's name is " + name);
-//     return name;
-//   };
 

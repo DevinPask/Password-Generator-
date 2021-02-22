@@ -88,7 +88,6 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
-  border: 1px solid darkgreen;
   border-radius: 25px;
   resize: none;
   overflow: hidden;
@@ -126,12 +125,8 @@ button[disabled] {
   border-radius: 10px;
   resize: none;    
   overflow: hidden;
-  background: repeating-linear-gradient(90deg, darkred, red 2px);
-  color: #ffeaee;
-}
-
-placeholder {
-color: white;
+  background: repeating-linear-gradient(90deg, white, lightgray 2px);
+  color: darkslategrey;
 }
 
 @media (max-width: 690px) {
