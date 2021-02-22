@@ -12,6 +12,10 @@ body,
   padding: 0;
 }
 
+h2 {
+    color: white;
+}
+
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
@@ -31,15 +35,16 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background: linear-gradient(180deg, black, darkgrey, transparent);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  border: 2px solid lightgray;
 }
 
 .card-header::after {
@@ -74,11 +79,8 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -86,6 +88,14 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+  border: 1px solid darkgreen;
+  border-radius: 25px;
+  resize: none;
+  overflow: hidden;
+  background: , transparent);
+  background: radial-gradient( black, darkgreen);
+  color: #39FF14;
+  text-shadow: 0 0 black;
 }
 
 button[disabled] {
@@ -107,15 +117,21 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
+  padding-bottom: 50px;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
+  border: 2px solid gray;
+  border-radius: 10px;
+  resize: none;    
   overflow: hidden;
+  background: repeating-linear-gradient(90deg, darkred, red 2px);
+  color: #ffeaee;
+}
+
+placeholder {
+color: white;
 }
 
 @media (max-width: 690px) {

@@ -66,13 +66,13 @@ function getChars() {
     return vals.charAt(random);
 }
 
-var getPlayerName = function() {
-    var name = "";
+// var getPlayerName = function() {
+//     var name = "";
   
-    while (name === "" || name === null) {
-      name = prompt("What is your robot's name?");
-    }
-    console.log("Your robot's name is " + name);
-    return name;
-  };
+//     while (name === "" || name === null) {
+//       name = prompt("What is your robot's name?");
+//     }
+//     console.log("Your robot's name is " + name);
+//     return name;
+//   };
 
